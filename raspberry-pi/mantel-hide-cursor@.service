@@ -1,0 +1,12 @@
+[Unit]
+Description=Hide the Mantel kiosk pointer for %i
+After=mantel-kiosk-4k.service
+PartOf=mantel-player.target
+
+[Service]
+Type=oneshot
+User=%i
+ExecStart=/usr/local/lib/mantel/hide-cursor.sh
+
+[Install]
+WantedBy=graphical.target

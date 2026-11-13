@@ -1,0 +1,73 @@
+name: Bug report
+description: Something does not work the way it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Please do not include your Immich API key,
+        your server's address, or screenshots of photos you would not post
+        publicly — issues are visible to everyone.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you expect, and what did you get instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the controller at port 3831
+        2. Select ...
+        3. Open a player
+        4. The screen shows ...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Mantel version
+      description: The version in package.json, or the image tag you run.
+      placeholder: "0.0.43"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install
+    attributes:
+      label: How do you run it?
+      options:
+        - Docker / Docker Compose
+        - Node directly
+        - Raspberry Pi player
+        - Something else
+    validations:
+      required: true
+
+  - type: input
+    id: immich
+    attributes:
+      label: Immich version
+      placeholder: "v2.3.0"
+
+  - type: input
+    id: browser
+    attributes:
+      label: Player browser and device
+      description: What is showing the slideshow — a TV, a Pi, a tablet?
+      placeholder: "Chromium 140 on Raspberry Pi 5, 4K TV"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Server logs and browser console
+      description: >
+        Anything from `docker logs` and the player's browser console.
+        This is automatically formatted as code, so no backticks needed.
+      render: shell

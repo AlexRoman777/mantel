@@ -1,0 +1,39 @@
+node_modules
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Mantel data
+/data
+.cache/
+static/map/textures/
+static/map/sentinel/
+mantel-data/
+mantel/
+
+# Release artifacts (never commit: these made the old history 2 GB)
+mantel/*.tar.gz
+*.tar.gz
+Deployment/
+data/

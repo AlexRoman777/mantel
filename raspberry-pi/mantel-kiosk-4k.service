@@ -1,0 +1,16 @@
+[Unit]
+Description=Mantel 4K player (Chromium on Wayland)
+After=network-online.target display-manager.service getty@tty1.service
+Wants=network-online.target display-manager.service
+PartOf=mantel-player.target
+
+[Service]
+User=admin
+ExecCondition=/bin/sh -c '[ -S /run/user/1000/wayland-0 ]'
+ExecStartPre=/bin/sh -c 'pkill -u admin -x chromium || true'
+ExecStart=/usr/local/bin/mantel-kiosk-launch.sh /usr/lib/chromium/chromium --kiosk http://mantel.local:3830/display/auto --window-size=3840,2160 --force-device-scale-factor=1 --noerrdialogs --disable-extensions --disable-background-networking --disable-sync --hide-scrollbars --enable-gpu-rasterization --enable-zero-copy --disable-background-timer-throttling --disable-backgrounding-occluded-windows --ozone-platform=wayland --num-raster-threads=2 --renderer-process-limit=1 --autoplay-policy=no-user-gesture-required --disable-dev-shm-usage --password-store=basic
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

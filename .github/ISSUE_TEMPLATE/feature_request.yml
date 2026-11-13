@@ -1,0 +1,45 @@
+name: Feature request
+description: Suggest something Mantel should be able to do
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the problem before the solution. The best feature
+        requests start with "I wanted to ... and could not", which often has a
+        simpler answer than the one either of us had in mind.
+
+        A few things are deliberately out of scope: writing to Immich,
+        telemetry, built-in authentication, and cloud services replacing
+        self-hosted ones. See CONTRIBUTING.md.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The situation in your home, not the feature.
+      placeholder: >
+        I have one screen in the kitchen and one in the hall, and I want the
+        kitchen one to stop at night without stopping the other.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: What would you like Mantel to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What did you try instead?
+      description: Existing settings you looked at, or workarounds you use now.
+
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Would you like to build it?
+      options:
+        - label: I would be willing to open a pull request for this

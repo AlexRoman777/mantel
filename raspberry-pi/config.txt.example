@@ -1,0 +1,9 @@
+# Known working Raspberry Pi 4 additions for the LG OLED 4K60 player.
+# Merge these into /boot/firmware/config.txt; do not replace the whole file.
+hdmi_enable_4kp60=1
+hdmi_group=1
+hdmi_mode=97
+hdmi_drive=2
+framebuffer_width=3840
+framebuffer_height=2160
+disable_overscan=1

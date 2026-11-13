@@ -1,0 +1,7 @@
+[Unit]
+Description=Mantel television player
+After=graphical.target network-online.target
+Wants=network-online.target mantel-kiosk-4k.service mantel-cec-remote@admin.service mantel-hide-cursor@admin.service
+
+[Install]
+WantedBy=multi-user.target

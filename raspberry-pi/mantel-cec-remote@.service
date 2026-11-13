@@ -1,0 +1,26 @@
+[Unit]
+Description=Mantel HDMI-CEC remote bridge for %i
+Documentation=file:/usr/local/share/doc/mantel/raspberry-pi/README.md
+After=graphical.target
+PartOf=mantel-player.target
+
+[Service]
+Type=simple
+User=%i
+Environment=DISPLAY=:1
+Environment=XAUTHORITY=/home/%i/.Xauthority
+Environment=MANTEL_CEC_LOG_LEVEL=INFO
+EnvironmentFile=-/etc/default/mantel-cec-remote
+ExecStart=/usr/local/lib/mantel/cec-launch.sh
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=graphical.target
