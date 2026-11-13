@@ -12,8 +12,9 @@
 </p>
 
 <p align="center">
-  <img src="docs/media/demo.webp" alt="Mantel dealing instant-film cards onto a dark table, each developing in place" width="820">
+  <img src="docs/media/tour.webp" alt="Four presentation modes in turn: a full-screen photo, a photo in a walnut frame and cream mat, instant-film cards developing on a dark table, and a mosaic of four photos" width="820">
 </p>
+<p align="center"><em>The same album, four ways. Recorded from the running app.</em></p>
 
 Your photos are already somewhere good. They are just not where you can see
 them.
