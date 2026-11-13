@@ -34,6 +34,7 @@ docker buildx build \
   --platform "$platform" \
   --file Dockerfile \
   --tag "mantel:$revision" \
+  --tag "mantel:latest" \
   --build-arg "MANTEL_VERSION=$revision" \
   --output "type=docker,dest=$work/$archive_name" \
   .
@@ -42,6 +43,12 @@ gzip -9 "$work/$archive_name"
 printf '%s\n' "$version" >"$work/VERSION"
 
 # The copied NAS directory is intentionally self-contained and minimal.
+# compose.yaml is tracked in the repository; everything else here is generated.
+mkdir -p "$destination"
+if [ ! -f "$destination/compose.yaml" ]; then
+  printf 'export-nas-image: %s is missing from the checkout\n' "mantel/compose.yaml" >&2
+  exit 1
+fi
 find "$destination" -maxdepth 1 -type f ! -name 'compose.yaml' -delete
 cp "$work/mantel.tar.gz" "$work/VERSION" "$destination/"
 

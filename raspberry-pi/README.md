@@ -1,8 +1,11 @@
 # Raspberry Pi and LG OLED player
 
-This is the Mantel-owned version of the Raspberry Pi setup used for the living
-room television. It records the known working ImmichFrame-era configuration and
-adapts only the browser URL to Mantel.
+One worked example of a dedicated kiosk screen: a Raspberry Pi driving a 4K LG
+OLED television. It records a known-good configuration, start to finish.
+
+**Nothing in Mantel requires any of this.** A screen is just a browser — see
+[docs/SCREENS.md](../docs/SCREENS.md). Use this as a reference if you are
+building something similar, on this hardware or any other.
 
 ## URLs
 
