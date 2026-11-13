@@ -1,0 +1,41 @@
+services:
+  mantel:
+    # Prebuilt, multi-architecture (amd64 and arm64). Nothing to compile.
+    # To build it yourself instead, comment this out and uncomment `build: .`.
+    image: ghcr.io/alexroman777/mantel:latest
+    # build: .
+    ports:
+      - '${MANTEL_BIND_ADDRESS:-0.0.0.0}:${MANTEL_PLAYER_PORT:-3830}:8780'
+      - '${MANTEL_BIND_ADDRESS:-0.0.0.0}:${MANTEL_CONTROLLER_PORT:-3831}:8781'
+    environment:
+      TZ: Europe/Stockholm
+      # How often Mantel asks Immich to refresh album/person membership.
+      PLAYLIST_REFRESH_MINUTES: 60
+      # Bounded parallel downloads for a manually confirmed album cache (1-8).
+      CACHE_CONCURRENCY: 4
+      IMAGE_CACHE_MAX_GB: 20
+      PORT: 8780
+      CONTROL_PORT: 8781
+      PUBLIC_PLAYER_PORT: ${MANTEL_PLAYER_PORT:-3830}
+      PUBLIC_CONTROL_PORT: ${MANTEL_CONTROLLER_PORT:-3831}
+      MANTEL_PUID: ${MANTEL_PUID:-10001}
+      MANTEL_PGID: ${MANTEL_PGID:-10001}
+    volumes:
+      # Holds config, caches and the map imagery at /data/map. Never replaced by
+      # a release: deleting the deployment directory leaves this untouched.
+      - type: bind
+        source: ${MANTEL_DATA_DIR:-./mantel-data}
+        target: /data
+        bind:
+          create_host_path: true
+    mem_limit: ${MANTEL_MEMORY_LIMIT:-2g}
+    mem_reservation: ${MANTEL_MEMORY_RESERVATION:-512m}
+    cpus: ${MANTEL_CPU_LIMIT:-2.0}
+    restart: unless-stopped
+    # Configure the Immich URL and API key from Mantel's controller after start.
+    # If Immich runs in its own compose project, you can join its network:
+    # networks: [immich_default]
+
+# networks:
+#   immich_default:
+#     external: true

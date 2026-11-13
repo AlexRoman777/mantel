@@ -1,0 +1,39 @@
+version: 2
+
+# Keep the queue readable. Routine churn arrives grouped; major versions are a
+# deliberate decision by the maintainer, not a pull request to be merged on a
+# Monday. Security advisories are unaffected by the ignore rules below —
+# Dependabot always raises those, major or not.
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    ignore:
+      # SvelteKit 3, TypeScript 7, Vitest 5 and the like change the build. They
+      # get done on purpose, with the tests watched, not by merging a bot.
+      - dependency-name: '*'
+        update-types: [version-update:semver-major]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 2
+    groups:
+      actions:
+        patterns: ['*']
+
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: monthly
+    ignore:
+      # The Node base image major is pinned to what the project is tested on.
+      - dependency-name: node
+        update-types: [version-update:semver-major]

@@ -1,0 +1,62 @@
+node_modules
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Your own deployment. INSTALL.md tells everyone to create this from
+# docker-compose.example.yml; it holds your paths, ports and interfaces.
+/docker-compose.yml
+/compose.yml
+/compose.yaml
+*.local
+
+# Credentials, should one ever be dropped in the tree
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*.kubeconfig
+
+# Logs and coverage
+*.log
+npm-debug.log*
+/coverage
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Mantel data
+/data
+.cache/
+static/map/textures/
+static/map/sentinel/
+mantel-data/
+# The NAS handoff directory is generated, except its Compose file.
+mantel/*
+!mantel/compose.yaml
+
+# Release artifacts (never commit: these made the old history 2 GB)
+mantel/*.tar.gz
+*.tar.gz
+Deployment/
+data/

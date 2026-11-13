@@ -1,0 +1,40 @@
+# gitleaks configuration for Mantel.
+#
+# Run it yourself before opening a pull request:
+#   gitleaks detect --source . --redact
+#
+# Mantel asks users for an Immich API key, a Home Assistant token and
+# optionally a Trafiklab key. None of them belong in this repository — they
+# live in the data directory at runtime, mode 0600. This config exists so that
+# a real one can never be committed quietly.
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "immich-api-key"
+description = "Immich API key"
+# Immich keys are long opaque strings; catch them when assigned to an obvious name.
+regex = '''(?i)(immich[_-]?api[_-]?key|IMMICH_API_KEY)["'\s]*[:=]["'\s]*[A-Za-z0-9._\-]{20,}'''
+tags = ["key", "immich"]
+
+[[rules]]
+id = "home-assistant-token"
+description = "Home Assistant long-lived access token"
+regex = '''eyJ[A-Za-z0-9_\-]{10,}\.[A-Za-z0-9_\-]{20,}\.[A-Za-z0-9_\-]{20,}'''
+tags = ["token", "home-assistant"]
+
+[allowlist]
+description = "Values that are public by design, or obviously fake"
+paths = [
+  '''package-lock\.json''',
+  '''docs/.*\.md''',
+]
+regexes = [
+  # skolmaten.se ships this token in its own public browser application. It is
+  # not a household credential; see src/lib/server/school-meals.ts.
+  '''web-eaa12e50-c84c-4b4a-9cfe-4e3fcbcd9165''',
+  # Placeholders used in documentation and tests.
+  '''(?i)(your|demo|example|test|fake|dummy|changeme|replace[_-]?me)[_-]?(api[_-]?)?key''',
+  '''<your-[a-z-]+>''',
+]
