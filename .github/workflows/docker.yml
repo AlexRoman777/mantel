@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     tags: ['v*']
+  pull_request:
 
 # Least privilege by default. The publish job widens this to packages: write.
 permissions:
@@ -24,6 +25,7 @@ jobs:
       - run: npm run build
 
   docker:
+    if: github.event_name == 'push'
     needs: test
     runs-on: ubuntu-latest
     permissions:
