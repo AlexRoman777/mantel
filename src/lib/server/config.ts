@@ -693,7 +693,7 @@ export async function getConfig(): Promise<AppConfig> {
 	try {
 		cached = configSchema.parse(normalizeConfig(JSON.parse(raw)));
 	} catch (e) {
-		console.error(`Invalid config at ${configPath()}, backing up and using defaults:`, e);
+		console.error('Invalid config, backing up and using defaults:', configPath(), e);
 		await fs.copyFile(configPath(), `${configPath()}.bad`).catch(() => {});
 		cached = defaultConfig();
 		await persist(cached);

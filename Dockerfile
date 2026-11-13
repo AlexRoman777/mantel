@@ -35,5 +35,9 @@ VOLUME /data
 EXPOSE 8780 8781
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
 	CMD wget -qO- http://127.0.0.1:8780/healthz || exit 1
+# The entrypoint drops to MANTEL_PUID:MANTEL_PGID with su-exec; see the note above the
+# runtime stage and scripts/docker-entrypoint.sh.
+# nosemgrep: dockerfile.security.missing-user-entrypoint.missing-user-entrypoint
 ENTRYPOINT ["mantel-entrypoint"]
+# nosemgrep: dockerfile.security.missing-user.missing-user
 CMD ["node", "server.js"]

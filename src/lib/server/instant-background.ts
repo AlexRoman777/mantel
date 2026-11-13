@@ -200,7 +200,7 @@ export function startInstantBackground(profileId: string, slides: readonly Slide
 	if (jobs.get(profileId)?.state === 'building') return false;
 	jobs.set(profileId, { state: 'building' });
 	void generate(profileId, slides, seed).catch(async (cause) => {
-		console.error(`Instant background generation failed for ${profileId}:`, cause);
+		console.error('Instant background generation failed for profile:', profileId, cause);
 		const message = cause instanceof Error ? cause.message : 'Background generation failed';
 		jobs.delete(profileId);
 		const previous = await getInstantBackgroundStatus(profileId);

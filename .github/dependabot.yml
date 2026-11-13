@@ -11,6 +11,8 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 3
+    cooldown:
+      default-days: 7
     groups:
       minor-and-patch:
         update-types: [minor, patch]
@@ -25,6 +27,8 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 2
+    cooldown:
+      default-days: 7
     groups:
       actions:
         patterns: ['*']
@@ -33,6 +37,8 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 7
     ignore:
       # The Node base image major is pinned to what the project is tested on.
       - dependency-name: node
