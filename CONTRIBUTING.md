@@ -35,6 +35,27 @@ npm run build
 All three must pass. `npm run check` is `svelte-check`, and new type errors are
 treated the same as test failures.
 
+## Security checks
+
+CI runs these on every pull request. Running them locally first saves a round
+trip:
+
+```sh
+gitleaks detect --source . --config .gitleaks.toml --redact
+checkov -d . --framework dockerfile,github_actions,secrets --compact --quiet
+trivy fs . --scanners vuln,misconfig --severity HIGH,CRITICAL --skip-dirs node_modules
+```
+
+Mantel holds an Immich API key, and optionally a Home Assistant token and a
+Trafiklab key. None of them may ever reach the repository, a log line or the
+browser. `.gitleaks.toml` exists to make a quiet mistake loud.
+
+Two findings are deliberately accepted, each with its reason written down: the
+Dockerfile has no `USER` instruction, because the entrypoint drops privileges
+itself with `su-exec`. See the comment in `Dockerfile` and `.trivyignore`. If
+you add an exception, write why in the same place — an entry there is a
+decision, not a silence.
+
 ## How the project is shaped
 
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) is the real explanation. The parts

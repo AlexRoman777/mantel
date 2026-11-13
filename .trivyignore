@@ -1,0 +1,10 @@
+# Findings deliberately accepted, with the reason. Review this file rather than
+# growing it: an entry here is a decision, not a silence.
+
+# DS-0002 — "Specify at least 1 USER command in Dockerfile".
+# The image has no USER instruction on purpose. It starts as root only to chown
+# the /data mount point, which a NAS host may have created as root, and then
+# drops to MANTEL_PUID:MANTEL_PGID (default 10001:10001) with su-exec before
+# exec'ing the server. A UID of 0 is rejected outright, and the container drops
+# every capability. See scripts/docker-entrypoint.sh.
+DS-0002
