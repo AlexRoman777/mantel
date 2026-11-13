@@ -12,9 +12,9 @@
 </p>
 
 <p align="center">
-  <img src="docs/media/tour.webp" alt="Four presentation modes in turn: a full-screen photo, a photo in a walnut frame and cream mat, instant-film cards developing on a dark table, and a mosaic of four photos" width="820">
+  <img src="docs/media/showcase.jpg" alt="Four ways Mantel shows the same album: a full-screen photo with a clock, a photo in a walnut frame and cream mat, instant-film cards on a dark table, and a globe marking where photos were taken" width="880">
 </p>
-<p align="center"><em>The same album, four ways. Recorded from the running app.</em></p>
+<p align="center"><em>One album, four ways. Screenshots from the running app.</em></p>
 
 Your photos are already somewhere good. They are just not where you can see
 them.
@@ -29,12 +29,11 @@ No account. No cloud. No subscription. Nothing leaves your network.
 
 ## See it
 
-|  |  |
-|---|---|
-| ![A full-screen photo with a clock and the date and place it was taken](docs/media/player.jpg) | ![The same photo inside a cream mat and a walnut picture frame](docs/media/gallery-framing.jpg) |
-| **Full screen** — with the overlays you choose | **Gallery framing** — a mat, a border, and a real-looking frame |
-| ![Two instant-film cards lying on a dark table with handwritten captions](docs/media/instant-table.jpg) | ![A vector globe with red pins on the places photos were taken](docs/media/world-map.jpg) |
-| **Instant table** — photos dealt out, developing as you watch | **World map** — the globe flies to the place each photo was taken |
+- **Full screen** — the photo, and only the overlays you choose
+- **Gallery framing** — a mat, a border, and a white, black, walnut or aluminium frame
+- **Mosaic** — several photos at once, paired to suit the shape of the screen
+- **Instant table** — photos dealt out as instant film, developing as you watch
+- **World map** — a self-hosted globe flies to the place each photo was taken
 
 <p align="center">
   <img src="docs/media/presentation-settings.jpg" alt="The presentation settings page, with albums, playback, layout and effect controls" width="820">

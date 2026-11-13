@@ -32,6 +32,13 @@ anyone deciding whether it does the specific thing they need.
 
 ## Layout and composition
 
+| | |
+|---|---|
+| ![A full-screen photo with a clock and the date and place it was taken](media/player.jpg) | ![The same kind of photo inside a cream mat and a walnut picture frame](media/gallery-framing.jpg) |
+| **Full screen** — the photo, and only the overlays you choose | **Gallery framing** — mat, border and a white, black, walnut or aluminium frame |
+| ![Four photos tiled together, sized to suit the screen](media/mosaic.jpg) | ![Two instant-film cards lying on a dark table with handwritten captions](media/instant-table.jpg) |
+| **Mosaic** — several photos at once, paired to suit the screen | **Instant table** — photos dealt out as instant film, developing in place |
+
 - **Presentation modes** — still images, five motion and face modes, six
   transitions, natural/monochrome/art/noir treatments, single/adaptive/mosaic/
   moving-wall layouts, or a random choice per composition

@@ -49,8 +49,8 @@ bundled with Mantel, and each user is responsible for complying with the provide
 
 ## Photographs in the documentation — `docs/media/`
 
-The screenshots and the animated demo show a throwaway demo library, never
-anyone's real photos. Every image in them is **CC0 or public domain**, from
+The screenshots show a throwaway demo library, never anyone's real photos.
+Every image in them is **CC0 or public domain**, from
 [Wikimedia Commons](https://commons.wikimedia.org). Attribution is not required
 by those terms and is given as a courtesy.
 
@@ -58,7 +58,7 @@ by those terms and is given as a courtesy.
 |---|---|---|
 | Hamnøy, Moskenesøya, Lofoten Islands, Norway | Stch2022 | CC0 |
 | Café in Paris | Nicolas Vigier | CC0 |
-| Country house, Tuscany | Marsel Minga | CC0 |
+| Val d'Orcia in autumn, Tuscany | Fabrizio Lunardi | CC0 |
 | Bishamondō and Daigo-ji, Kyoto | lumoplank | CC0 |
 | Hiking in the Italian Alps | Philipp Schlabs | CC0 |
 | Amsterdam canal houses | Kaci Baum | CC0 |
