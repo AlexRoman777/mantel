@@ -162,7 +162,7 @@ function pumpPrefetchQueue(): void {
 		const key = `${job.connectionId ?? 'default'}:${job.assetId}:${job.size}`;
 		activePrefetches++;
 		void getCachedAssetImage(job.assetId, job.size, job.connectionId)
-			.catch((error) => console.error(`image prefetch failed for ${job.assetId}:`, error))
+			.catch((error) => console.error('image prefetch failed for asset:', job.assetId, error))
 			.finally(() => {
 				activePrefetches--;
 				scheduledPrefetches.delete(key);

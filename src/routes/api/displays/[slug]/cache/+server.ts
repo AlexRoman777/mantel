@@ -32,7 +32,7 @@ export const POST: RequestHandler = async ({ params, request }) => {
 		return json({ error: 'The selected album contents changed. Review the updated estimate.', plan }, { status: 409 });
 	}
 	void prefetchImages(slides, profile.slideshow.imageSize).catch((cause) => {
-		console.error(`confirmed cache job failed for ${profile.slug}:`, cause);
+		console.error('confirmed cache job failed for display:', profile.slug, cause);
 	});
 	return json({ started: true, plan });
 };
