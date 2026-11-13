@@ -142,7 +142,7 @@ inherit their user's authority.
 
 ## Planned: video playback
 
-Video assets are deliberately excluded from image playlists in v0.0.x, so a
+Video assets are deliberately excluded from image playlists in version 1.0, so a
 shared clip cannot become a blank slide.
 
 The planned video path will add server-cached range streaming, poster frames,

@@ -27,9 +27,9 @@ The planned image workflow is:
 
 ```sh
 docker login registry.home.arpa
-docker tag mantel:v0.0.33 registry.home.arpa/mantel/mantel:v0.0.33
-docker push registry.home.arpa/mantel/mantel:v0.0.33
-docker pull registry.home.arpa/mantel/mantel:v0.0.33
+docker tag mantel:v1.0.0 registry.home.arpa/mantel/mantel:v1.0.0
+docker push registry.home.arpa/mantel/mantel:v1.0.0
+docker pull registry.home.arpa/mantel/mantel:v1.0.0
 ```
 
 After that, Mantel's NAS Compose can use the registry tag and `pull_policy` can

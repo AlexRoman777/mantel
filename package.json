@@ -1,7 +1,7 @@
 {
 	"name": "mantel",
 	"private": true,
-	"version": "0.0.43",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",

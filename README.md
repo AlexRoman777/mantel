@@ -106,6 +106,7 @@ to make a safe Immich key, and what to do when it does not work.
 | [Overlays and widgets](docs/WIDGETS.md) | Clocks, weather, tickers, messages |
 | [Instant mode](docs/INSTANT_MODE.md) | The instant-film table |
 | [Architecture](docs/ARCHITECTURE.md) | How it is built, for contributors |
+| [Changelog](CHANGELOG.md) | What changed in each release |
 
 ## Policies
 
