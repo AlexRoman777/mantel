@@ -5,6 +5,10 @@ on:
     branches: [main]
     tags: ['v*']
 
+# Least privilege by default. The publish job widens this to packages: write.
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
