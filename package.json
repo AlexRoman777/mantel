@@ -15,24 +15,24 @@
 		"smoke": "node --env-file=.env scripts/immich-smoke.js"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-node": "^5.5.7",
-		"@sveltejs/kit": "^2.63.0",
-		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@sveltejs/adapter-node": "^5.5.8",
+		"@sveltejs/kit": "^2.70.4",
+		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@testing-library/svelte": "^5.4.2",
-		"@types/node": "^26.4.0",
-		"@types/three": "^0.185.4",
-		"happy-dom": "^20.12.0",
-		"svelte": "^5.56.1",
-		"svelte-check": "^4.6.0",
+		"@types/node": "^26.6.6",
+		"@types/three": "^0.187.0",
+		"happy-dom": "^20.14.6",
+		"svelte": "^5.57.3",
+		"svelte-check": "^4.7.8",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.16",
-		"vitest": "^4.1.11"
+		"vite": "^8.3.6",
+		"vitest": "^4.1.12"
 	},
 	"dependencies": {
 		"sharp": "^0.35.5",
-		"three": "^0.185.1",
+		"three": "^0.187.0",
 		"thumbhash": "^0.1.1",
-		"zod": "^4.4.3"
+		"zod": "^4.6.7"
 	},
 	"license": "AGPL-3.0-or-later",
 	"description": "A self-hosted digital photo frame for Immich"
