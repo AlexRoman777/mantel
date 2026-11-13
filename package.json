@@ -21,7 +21,7 @@
 		"@testing-library/svelte": "^5.4.2",
 		"@types/node": "^26.6.6",
 		"@types/three": "^0.187.0",
-		"happy-dom": "^20.14.6",
+		"happy-dom": "^21.0.4",
 		"svelte": "^5.57.3",
 		"svelte-check": "^4.7.8",
 		"typescript": "^6.0.3",
