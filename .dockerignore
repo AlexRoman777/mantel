@@ -10,7 +10,6 @@ mantel
 Dockerfile
 docker-compose*
 README.md
-CLAUDE.md
 static/map/sentinel
 static/map/textures/detail
 static/map/textures/relief
