@@ -1,5 +1,5 @@
 # ---- build ----
-FROM node:22-alpine AS build
+FROM node:25-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
@@ -12,7 +12,7 @@ RUN npm run build && npm prune --omit=dev
 # have created as root, then drops to MANTEL_PUID:MANTEL_PGID (default
 # 10001:10001) with su-exec. A UID of 0 is rejected outright. See
 # scripts/docker-entrypoint.sh.
-FROM node:22-alpine
+FROM node:25-alpine
 ARG MANTEL_VERSION=dev
 ENV NODE_ENV=production DATA_DIR=/data PORT=8780 CONTROL_PORT=8781 MANTEL_PUID=10001 MANTEL_PGID=10001
 LABEL org.opencontainers.image.title="Mantel" \
