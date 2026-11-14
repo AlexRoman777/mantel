@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { InstantSettings } from '$lib/types';
+	import type { InstantSettings } from '#lib/types.js';
 	import Toggle from './Toggle.svelte';
 
 	let { settings = $bindable(), slug }: { settings: InstantSettings; slug: string } = $props();

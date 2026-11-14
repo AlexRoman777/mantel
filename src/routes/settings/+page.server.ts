@@ -1,5 +1,5 @@
-import { getConfig } from '$lib/server/config';
-import { getImmichConnectionStatus } from '$lib/server/immich-connection';
+import { getConfig } from '#lib/server/config.js';
+import { getImmichConnectionStatus } from '#lib/server/immich-connection.js';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

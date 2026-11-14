@@ -1,6 +1,6 @@
 import { error, json } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { getPlaylistPage } from '$lib/server/playlist';
+import { getProfile } from '#lib/server/config.js';
+import { getPlaylistPage } from '#lib/server/playlist.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ params, url }) => {

@@ -3,11 +3,9 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/sv
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import SettingsPage from './+page.svelte';
 
-const navigation = vi.hoisted(() => ({ invalidateAll: vi.fn(async () => undefined) }));
+const navigation = vi.hoisted(() => ({ refreshAll: vi.fn(async () => undefined) }));
 vi.mock('$app/navigation', () => navigation);
-vi.mock('$env/dynamic/public', () => ({
-	env: { PUBLIC_CONTROL_PORT: '3001', PUBLIC_PLAYER_PORT: '3000' }
-}));
+vi.mock('$app/env/public', () => ({ PUBLIC_CONTROL_PORT: '3001', PUBLIC_PLAYER_PORT: '3000' }));
 
 const data = {
 	displays: [{ slug: 'living-room', name: 'Living room', sources: 1 }],
@@ -37,7 +35,7 @@ describe('Controller overview', () => {
 	let fetchMock: ReturnType<typeof vi.fn>;
 
 	beforeEach(() => {
-		navigation.invalidateAll.mockClear();
+		navigation.refreshAll.mockClear();
 		fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
 			const url = String(input);
 			if (url === '/api/cache' && !init?.method) return new Response(JSON.stringify({ files: 14, bytes: 6_291_456, queued: 3, active: 1 }), { status: 200 });
@@ -89,7 +87,7 @@ describe('Controller overview', () => {
 		const name = screen.getByPlaceholderText('New presentation name (e.g. Living room family)');
 		await fireEvent.input(name, { target: { value: '  Kitchen frame  ' } });
 		await fireEvent.click(screen.getByRole('button', { name: 'Create presentation' }));
-		await waitFor(() => expect(navigation.invalidateAll).toHaveBeenCalled());
+		await waitFor(() => expect(navigation.refreshAll).toHaveBeenCalled());
 		const call = fetchMock.mock.calls.find(([url, init]) => url === '/api/displays' && init?.method === 'POST');
 		expect(JSON.parse(String(call?.[1]?.body))).toEqual({ name: 'Kitchen frame' });
 	});

@@ -1,6 +1,6 @@
 import { error, json } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { getOsmDetail } from '$lib/server/osm';
+import { getProfile } from '#lib/server/config.js';
+import { getOsmDetail } from '#lib/server/osm.js';
 import type { RequestHandler } from './$types';
 
 /**

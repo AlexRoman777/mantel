@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit';
-import { clearImageCache, getImageCacheStats } from '$lib/server/image-cache';
-import { mapLibraryStats, regionJobStatus, sentinelCacheStats } from '$lib/server/map-tiles';
-import { osmCacheStats } from '$lib/server/osm';
+import { clearImageCache, getImageCacheStats } from '#lib/server/image-cache.js';
+import { mapLibraryStats, regionJobStatus, sentinelCacheStats } from '#lib/server/map-tiles.js';
+import { osmCacheStats } from '#lib/server/osm.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async () =>

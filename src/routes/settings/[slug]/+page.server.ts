@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { getImmichConnectionStatus } from '$lib/server/immich-connection';
-import { getHomeAssistantStatus } from '$lib/server/home-assistant';
+import { getProfile } from '#lib/server/config.js';
+import { getImmichConnectionStatus } from '#lib/server/immich-connection.js';
+import { getHomeAssistantStatus } from '#lib/server/home-assistant.js';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, url }) => {

@@ -1,6 +1,6 @@
 import { error, json } from '@sveltejs/kit';
-import { getConfig, updateConfig } from '$lib/server/config';
-import { sendCommand, type ClientCommand } from '$lib/server/control';
+import { getConfig, updateConfig } from '#lib/server/config.js';
+import { sendCommand, type ClientCommand } from '#lib/server/control.js';
 import type { RequestHandler } from './$types';
 
 const COMMANDS = new Set(['toggle', 'pause', 'resume', 'next', 'prev', 'switch', 'identify', 'refresh', 'blackout', 'wake']);

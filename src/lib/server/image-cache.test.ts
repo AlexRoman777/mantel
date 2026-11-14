@@ -21,7 +21,9 @@ async function writeVariant(dir: string, key: string, bytes: number, ageMinutes:
 describe('image cache ceiling', () => {
 	it('evicts the least-recently shown variants until the cache fits under the ceiling', async () => {
 		temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'mantel-cache-'));
-		vi.doMock('$env/dynamic/private', () => ({ env: { DATA_DIR: temporaryDirectory, IMAGE_CACHE_MAX_GB: '0' } }));
+		vi.doMock('$app/env/private', async () =>
+			(await import('#lib/server/env.test-helper.js')).privateEnv({ DATA_DIR: temporaryDirectory, IMAGE_CACHE_MAX_GB: '0' })
+		);
 		const dir = path.join(temporaryDirectory, 'image-cache');
 		await fs.mkdir(dir, { recursive: true });
 		await writeVariant(dir, 'old-preview', 400, 60);
@@ -43,7 +45,9 @@ describe('image cache ceiling', () => {
 
 	it('defaults the ceiling to 20 GB when the variable is unset', async () => {
 		temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'mantel-cache-'));
-		vi.doMock('$env/dynamic/private', () => ({ env: { DATA_DIR: temporaryDirectory } }));
+		vi.doMock('$app/env/private', async () =>
+			(await import('#lib/server/env.test-helper.js')).privateEnv({ DATA_DIR: temporaryDirectory })
+		);
 		const { getImageCacheStats } = await import('./image-cache');
 		expect((await getImageCacheStats()).maxBytes).toBe(20 * 1024 ** 3);
 	});

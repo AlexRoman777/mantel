@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Corner, MapSettings } from '$lib/types';
+	import type { Corner, MapSettings } from '#lib/types.js';
 	import Segmented from './Segmented.svelte';
 	import Toggle from './Toggle.svelte';
 

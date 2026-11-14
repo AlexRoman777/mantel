@@ -5,9 +5,9 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { env } from '$env/dynamic/private';
+import * as env from '$app/env/private';
 import { z } from 'zod';
-import type { AppConfig, DisplayProfile, MapSettings } from '$lib/types';
+import type { AppConfig, DisplayProfile, MapSettings } from '#lib/types.js';
 
 const cornerSchema = z.enum([
 	'top-left', 'top-center', 'top-right',

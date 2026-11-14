@@ -1,7 +1,7 @@
 import { error, json } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { getSwedishCalendarDay } from '$lib/server/swedish-calendar';
-import { getRegionalCalendarDay } from '$lib/server/regional-calendar';
+import { getProfile } from '#lib/server/config.js';
+import { getSwedishCalendarDay } from '#lib/server/swedish-calendar.js';
+import { getRegionalCalendarDay } from '#lib/server/regional-calendar.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ url }) => {

@@ -8,7 +8,7 @@
 import { createHash } from 'node:crypto';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { env } from '$env/dynamic/private';
+import * as env from '$app/env/private';
 
 export const OSM_ATTRIBUTION = '© OpenStreetMap contributors';
 const ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];

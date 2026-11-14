@@ -1,8 +1,8 @@
 import { json } from '@sveltejs/kit';
 import { randomUUID } from 'node:crypto';
-import { defaultProfile, getConfig, updateConfig } from '$lib/server/config';
-import { getImmichConnectionStatus } from '$lib/server/immich-connection';
-import type { DisplayProfile } from '$lib/types';
+import { defaultProfile, getConfig, updateConfig } from '#lib/server/config.js';
+import { getImmichConnectionStatus } from '#lib/server/immich-connection.js';
+import type { DisplayProfile } from '#lib/types.js';
 import type { RequestHandler } from './$types';
 
 function slugify(value: string): string {

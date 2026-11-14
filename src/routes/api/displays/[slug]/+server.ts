@@ -1,7 +1,7 @@
 import { error, json } from '@sveltejs/kit';
 import { ZodError } from 'zod';
-import { getProfile, updateConfig } from '$lib/server/config';
-import { refreshProfile, sendCommand } from '$lib/server/control';
+import { getProfile, updateConfig } from '#lib/server/config.js';
+import { refreshProfile, sendCommand } from '#lib/server/control.js';
 import type { RequestHandler } from './$types';
 
 /** Public profile for one display — what the slideshow client needs to render. */

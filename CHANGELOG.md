@@ -3,6 +3,12 @@
 Mantel follows [semantic versioning](https://semver.org). A change that breaks an existing
 installation or its saved configuration raises the first number.
 
+## Unreleased
+
+- Built on SvelteKit 3, which fixes the remaining framework security advisories.
+- Deletes from another site are now refused. Behind an HTTPS proxy, the proxy must send
+  `X-Forwarded-Proto` or `ORIGIN` must be set; see the installation guide.
+
 ## 1.0.0 (14 November 2026)
 
 The first public release.

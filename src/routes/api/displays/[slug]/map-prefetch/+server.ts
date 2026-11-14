@@ -1,8 +1,8 @@
 import { error, json } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { warmSentinelTiles } from '$lib/server/map-tiles';
-import { warmOsmDetail } from '$lib/server/osm';
-import { warmPlaceTrivia } from '$lib/server/place-trivia';
+import { getProfile } from '#lib/server/config.js';
+import { warmSentinelTiles } from '#lib/server/map-tiles.js';
+import { warmOsmDetail } from '#lib/server/osm.js';
+import { warmPlaceTrivia } from '#lib/server/place-trivia.js';
 import type { RequestHandler } from './$types';
 
 interface RequestedPlace {

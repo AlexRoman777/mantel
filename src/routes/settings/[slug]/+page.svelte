@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { Corner, DisplayProfile } from '$lib/types';
-	import AlbumPicker from '$lib/components/settings/AlbumPicker.svelte';
-	import PersonPicker from '$lib/components/settings/PersonPicker.svelte';
-	import InstantStudio from '$lib/components/settings/InstantStudio.svelte';
-	import MapStudio from '$lib/components/settings/MapStudio.svelte';
-	import Segmented from '$lib/components/settings/Segmented.svelte';
-	import TextAppearanceEditor from '$lib/components/settings/TextAppearanceEditor.svelte';
-	import Toggle from '$lib/components/settings/Toggle.svelte';
-	import ControllerHeader from '$lib/components/controller/ControllerHeader.svelte';
-	import { createClientId } from '$lib/client-id';
-	import { playerPublicPort } from '$lib/public-ports';
+	import type { Corner, DisplayProfile } from '#lib/types.js';
+	import AlbumPicker from '#lib/components/settings/AlbumPicker.svelte';
+	import PersonPicker from '#lib/components/settings/PersonPicker.svelte';
+	import InstantStudio from '#lib/components/settings/InstantStudio.svelte';
+	import MapStudio from '#lib/components/settings/MapStudio.svelte';
+	import Segmented from '#lib/components/settings/Segmented.svelte';
+	import TextAppearanceEditor from '#lib/components/settings/TextAppearanceEditor.svelte';
+	import Toggle from '#lib/components/settings/Toggle.svelte';
+	import ControllerHeader from '#lib/components/controller/ControllerHeader.svelte';
+	import { createClientId } from '#lib/client-id.js';
+	import { playerPublicPort } from '#lib/public-ports.js';
 
 	let { data } = $props();
 

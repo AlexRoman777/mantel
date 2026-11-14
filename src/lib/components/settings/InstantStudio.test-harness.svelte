@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { InstantSettings } from '$lib/types';
+	import type { InstantSettings } from '#lib/types.js';
 	import InstantStudio from './InstantStudio.svelte';
 
 	let {

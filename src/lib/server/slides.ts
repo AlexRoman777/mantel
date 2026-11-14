@@ -1,4 +1,4 @@
-import type { SlideAsset } from '$lib/types';
+import type { SlideAsset } from '#lib/types.js';
 import type { ImmichAsset } from './immich';
 
 /** EXIF orientations 5–8 are rotated 90°/270°: width and height swap. */

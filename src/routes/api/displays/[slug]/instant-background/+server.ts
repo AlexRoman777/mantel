@@ -1,13 +1,13 @@
 import { error, json } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { getDisplayCandidates } from '$lib/server/playlist';
+import { getProfile } from '#lib/server/config.js';
+import { getDisplayCandidates } from '#lib/server/playlist.js';
 import {
 	deleteInstantBackground,
 	getInstantBackgroundStatus,
 	planInstantBackground,
 	instantBackgroundBody,
 	startInstantBackground
-} from '$lib/server/instant-background';
+} from '#lib/server/instant-background.js';
 import type { RequestHandler } from './$types';
 
 async function profileForSlug(slug: string) {

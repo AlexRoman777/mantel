@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { DashboardWidget as Widget } from '$lib/types';
+	import type { DashboardWidget as Widget } from '#lib/types.js';
 
 	let { widget, tickerIndex = 0 }: { widget: Widget; tickerIndex?: number } = $props();
 	const quotes = [

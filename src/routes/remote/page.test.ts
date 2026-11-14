@@ -3,9 +3,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/sv
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import RemotePage from './+page.svelte';
 
-vi.mock('$env/dynamic/public', () => ({
-	env: { PUBLIC_CONTROL_PORT: '3001', PUBLIC_PLAYER_PORT: '3000' }
-}));
+vi.mock('$app/env/public', () => ({ PUBLIC_CONTROL_PORT: '3001', PUBLIC_PLAYER_PORT: '3000' }));
 
 const displays = [
 	{ slug: 'living-room', name: 'Living room' },

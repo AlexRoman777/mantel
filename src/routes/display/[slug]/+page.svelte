@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
-	import Slideshow from '$lib/components/slideshow/Slideshow.svelte';
-	import type { DisplayProfile } from '$lib/types';
-	import { createClientId } from '$lib/client-id';
+	import Slideshow from '#lib/components/slideshow/Slideshow.svelte';
+	import type { DisplayProfile } from '#lib/types.js';
+	import { createClientId } from '#lib/client-id.js';
 
 	let profile = $state<DisplayProfile | null>(null);
 	let stopped = false;

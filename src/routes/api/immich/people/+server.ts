@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { getPeople } from '$lib/server/immich';
+import { getPeople } from '#lib/server/immich.js';
 import type { RequestHandler } from './$types';
 
 /** Named, visible people for the settings picker. */

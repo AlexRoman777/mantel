@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { broadcastCommand } from '$lib/server/control';
+import { broadcastCommand } from '#lib/server/control.js';
 import type { RequestHandler } from './$types';
 
 export const POST: RequestHandler = async ({ request }) => {

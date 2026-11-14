@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { REGIONS, regionJobStatus, regionTileCount, SENTINEL_MAX_LEVEL, startRegionPrefetch, stopRegionPrefetch } from '$lib/server/map-tiles';
+import { REGIONS, regionJobStatus, regionTileCount, SENTINEL_MAX_LEVEL, startRegionPrefetch, stopRegionPrefetch } from '#lib/server/map-tiles.js';
 import type { RequestHandler } from './$types';
 
 /** Bulk Sentinel imagery prefetch for a region: status, start, stop. */

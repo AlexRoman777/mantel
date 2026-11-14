@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import ControllerHeader from '$lib/components/controller/ControllerHeader.svelte';
-	import { playerPublicPort } from '$lib/public-ports';
+	import ControllerHeader from '#lib/components/controller/ControllerHeader.svelte';
+	import { playerPublicPort } from '#lib/public-ports.js';
 
 	let { data } = $props();
 

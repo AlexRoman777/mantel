@@ -1,7 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { env } from '$env/dynamic/private';
+import * as env from '$app/env/private';
 import { z } from 'zod';
 
 export interface ImmichConnection {

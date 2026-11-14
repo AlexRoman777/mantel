@@ -1,7 +1,7 @@
 import { error, json } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { getWeather } from '$lib/server/weather';
-import { getHomeAssistantWeather } from '$lib/server/home-assistant';
+import { getProfile } from '#lib/server/config.js';
+import { getWeather } from '#lib/server/weather.js';
+import { getHomeAssistantWeather } from '#lib/server/home-assistant.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ url }) => {

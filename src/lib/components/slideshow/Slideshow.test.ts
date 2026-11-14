@@ -1,8 +1,8 @@
 // @vitest-environment happy-dom
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/svelte';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { DisplayProfile, SlideAsset } from '$lib/types';
-import { makeTestProfile } from '$lib/test-profile.test-helper';
+import type { DisplayProfile, SlideAsset } from '#lib/types.js';
+import { makeTestProfile } from '#lib/test-profile.test-helper.js';
 import Slideshow from './Slideshow.svelte';
 
 vi.mock('$app/state', () => ({

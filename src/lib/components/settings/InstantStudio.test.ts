@@ -1,7 +1,7 @@
 // @vitest-environment happy-dom
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/svelte';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { InstantSettings } from '$lib/types';
+import type { InstantSettings } from '#lib/types.js';
 import InstantStudioHarness from './InstantStudio.test-harness.svelte';
 
 const makeSettings = (): InstantSettings => ({

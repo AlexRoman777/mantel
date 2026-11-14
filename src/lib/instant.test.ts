@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { FaceInfo, InstantSettings, SlideAsset } from '$lib/types';
+import type { FaceInfo, InstantSettings, SlideAsset } from '#lib/types.js';
 import {
 	AUTHENTIC_BOTTOM_BORDER_PCT,
 	AUTHENTIC_INSTANT,

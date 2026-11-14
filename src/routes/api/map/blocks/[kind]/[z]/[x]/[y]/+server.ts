@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { createReadStream } from 'node:fs';
 import { Readable } from 'node:stream';
-import { BLOCK_KINDS, getMapBlock, SENTINEL_MAX_LEVEL, type BlockKind } from '$lib/server/map-tiles';
+import { BLOCK_KINDS, getMapBlock, SENTINEL_MAX_LEVEL, type BlockKind } from '#lib/server/map-tiles.js';
 import type { RequestHandler } from './$types';
 
 /**

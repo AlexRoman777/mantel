@@ -4,8 +4,8 @@ import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
-import { env } from '$env/dynamic/private';
-import type { SlideAsset } from '$lib/types';
+import * as env from '$app/env/private';
+import type { SlideAsset } from '#lib/types.js';
 import { fetchAssetImage } from './immich';
 
 export type ImageSize = 'preview' | 'thumbnail' | 'fullsize';

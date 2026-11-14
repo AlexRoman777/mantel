@@ -1,8 +1,8 @@
 // Resolves a display profile's sources into an ordered, paged slide queue.
 // The server does all the work; the client just consumes lean SlideAsset pages.
 
-import type { DisplayProfile, PlaylistResponse, SlideAsset } from '$lib/types';
-import { env } from '$env/dynamic/private';
+import type { DisplayProfile, PlaylistResponse, SlideAsset } from '#lib/types.js';
+import * as env from '$app/env/private';
 import { createHash, randomUUID } from 'node:crypto';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';

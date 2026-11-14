@@ -1,4 +1,4 @@
-import type { DisplayProfile, SlideAsset } from '$lib/types';
+import type { DisplayProfile, SlideAsset } from '#lib/types.js';
 import { getAlbums } from './immich';
 import { isPortrait } from './playlist-core';
 
