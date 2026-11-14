@@ -156,8 +156,8 @@ If the machine cannot pull images, save the image on a machine that can and copy
 the file across:
 
 ```sh
-docker pull ghcr.io/alexroman777/mantel:1.0.0
-docker save ghcr.io/alexroman777/mantel:1.0.0 | gzip > mantel.tar.gz
+docker pull ghcr.io/alexroman777/mantel:1.0.1
+docker save ghcr.io/alexroman777/mantel:1.0.1 | gzip > mantel.tar.gz
 ```
 
 Then, on the target machine, next to your `docker-compose.yml`:

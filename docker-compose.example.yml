@@ -4,7 +4,7 @@ services:
     # To build it yourself instead, comment this out and uncomment `build: .`.
     # A fixed version, so an install does not change underneath you. Raise it to upgrade,
     # or use :latest to follow every release.
-    image: ghcr.io/alexroman777/mantel:1.0.0
+    image: ghcr.io/alexroman777/mantel:1.0.1
     # build: .
     ports:
       - '${MANTEL_BIND_ADDRESS:-0.0.0.0}:${MANTEL_PLAYER_PORT:-3830}:8780'
