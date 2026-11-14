@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { randomUUID } from 'node:crypto';
-import { defaultProfile, updateConfig } from '$lib/server/config';
+import { defaultProfile, updateConfig } from '#lib/server/config.js';
 import type { RequestHandler } from './$types';
 
 function slugify(name: string): string {

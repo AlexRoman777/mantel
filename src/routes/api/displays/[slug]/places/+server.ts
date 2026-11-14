@@ -1,7 +1,7 @@
 import { error, json } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { getDisplayCandidates } from '$lib/server/playlist';
-import { clusterPlaces } from '$lib/map/geo';
+import { getProfile } from '#lib/server/config.js';
+import { getDisplayCandidates } from '#lib/server/playlist.js';
+import { clusterPlaces } from '#lib/map/geo.js';
 import type { RequestHandler } from './$types';
 
 /** Every place this display has photos for: the map layout draws them as markers. */

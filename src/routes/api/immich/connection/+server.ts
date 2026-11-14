@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
-import { clearFaceCache } from '$lib/server/face-cache';
-import { clearImageCache } from '$lib/server/image-cache';
+import { clearFaceCache } from '#lib/server/face-cache.js';
+import { clearImageCache } from '#lib/server/image-cache.js';
 import {
 	clearImmichConnection,
 	getImmichConnection,
@@ -8,9 +8,9 @@ import {
 	normalizeAlbumIds,
 	normalizeImmichUrl,
 	saveImmichConnection
-} from '$lib/server/immich-connection';
-import { ImmichError, testImmichConnection } from '$lib/server/immich';
-import { clearPlaylistCache } from '$lib/server/playlist';
+} from '#lib/server/immich-connection.js';
+import { ImmichError, testImmichConnection } from '#lib/server/immich.js';
+import { clearPlaylistCache } from '#lib/server/playlist.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async () => json(await getImmichConnectionStatus());

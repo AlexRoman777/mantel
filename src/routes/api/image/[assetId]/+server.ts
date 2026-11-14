@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { cachedImageBody, getCachedAssetImage, type ImageSize } from '$lib/server/image-cache';
+import { cachedImageBody, getCachedAssetImage, type ImageSize } from '#lib/server/image-cache.js';
 import type { RequestHandler } from './$types';
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;

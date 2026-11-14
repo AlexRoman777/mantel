@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { TextAppearance } from '$lib/types';
+	import type { TextAppearance } from '#lib/types.js';
 
 	let { appearance, children }: { appearance: TextAppearance; children: Snippet } = $props();
 	const resolvedColor = $derived(

@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
-import { getConfig } from '$lib/server/config';
-import { listSessions } from '$lib/server/control';
+import { getConfig } from '#lib/server/config.js';
+import { listSessions } from '#lib/server/control.js';
 import type { RequestHandler } from './$types';
 
 /** Shorten a user-agent string into something a human recognizes on a card. */

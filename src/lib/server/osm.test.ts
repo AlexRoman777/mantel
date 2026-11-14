@@ -1,6 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 
-vi.mock('$env/dynamic/private', () => ({ env: { DATA_DIR: '/tmp/mantel-osm-test' } }));
+vi.mock('$app/env/private', async () =>
+	(await import('#lib/server/env.test-helper.js')).privateEnv({ DATA_DIR: '/tmp/mantel-osm-test' })
+);
 
 const { compileOsm, osmWindows, regionalQuery } = await import('./osm');
 

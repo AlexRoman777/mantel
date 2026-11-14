@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TextAppearance } from '$lib/types';
+	import type { TextAppearance } from '#lib/types.js';
 	let {
 		text,
 		speedSec,

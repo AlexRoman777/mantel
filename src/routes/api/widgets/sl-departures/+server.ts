@@ -1,5 +1,5 @@
 import { error, json } from '@sveltejs/kit';
-import { getSlDepartures } from '$lib/server/sl-departures';
+import { getSlDepartures } from '#lib/server/sl-departures.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ url }) => {

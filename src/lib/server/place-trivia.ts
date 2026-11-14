@@ -10,11 +10,11 @@
 import { createHash } from 'node:crypto';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { env } from '$env/dynamic/private';
+import * as env from '$app/env/private';
 import {
 	containingShape, decodeDetail, decodePlaces, decodeWorld, distanceKm, nearestPlace, sunTimes,
 	type Country, type DetailData, type Place, type WorldData
-} from '$lib/map/geo';
+} from '#lib/map/geo.js';
 import placesJson from '../../../static/map/places.json';
 import countriesJson from '../../../static/map/countries.json';
 import worldJson from '../../../static/map/world.json';

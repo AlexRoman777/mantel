@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { FaceInfo, SlideAsset } from '$lib/types';
+	import type { FaceInfo, SlideAsset } from '#lib/types.js';
 
 	let { faces, slide, showAge, showCards }: { faces: FaceInfo[]; slide: SlideAsset; showAge: boolean; showCards: boolean } = $props();
 	const named = $derived(faces.filter((face) => face.name));

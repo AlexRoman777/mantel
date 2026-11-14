@@ -1,5 +1,12 @@
 import { createServer } from 'node:http';
-import { handler } from './build/handler.js';
+
+// SvelteKit refuses a cross-origin DELETE, so it must know whether a request arrived over http or
+// https. The adapter reads the protocol from this header and otherwise assumes https, which would
+// refuse every delete on a plain-HTTP network. A reverse proxy that terminates TLS sets the header
+// itself; a direct connection is marked http below. Set ORIGIN to override both.
+process.env.PROTOCOL_HEADER ??= 'x-forwarded-proto';
+const protocolHeader = process.env.PROTOCOL_HEADER.toLowerCase();
+const { handler } = await import('./build/handler.js');
 
 const playerPort = Number(process.env.PORT || 8780);
 const controlPort = Number(process.env.CONTROL_PORT || 8781);
@@ -12,6 +19,7 @@ function app(control = false) {
 			response.end();
 			return;
 		}
+		request.headers[protocolHeader] ??= 'http';
 		handler(request, response);
 	});
 }

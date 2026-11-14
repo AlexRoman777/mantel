@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { invalidateAll } from '$app/navigation';
+	import { refreshAll } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import ControllerHeader from '$lib/components/controller/ControllerHeader.svelte';
-	import { playerPublicPort } from '$lib/public-ports';
+	import ControllerHeader from '#lib/components/controller/ControllerHeader.svelte';
+	import { playerPublicPort } from '#lib/public-ports.js';
 
 	let { data } = $props();
 	let newName = $state('');
@@ -142,7 +142,7 @@
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ type: 'switch', slug: profile.slug })
 		});
-		await invalidateAll();
+		await refreshAll();
 		setTimeout(() => void refreshClients(), 400);
 		return profile.slug;
 	}
@@ -217,7 +217,7 @@
 			immichKey = '';
 			connectionState = 'connected';
 			connectionSummary = `${body.albums} allowed album${body.albums === 1 ? '' : 's'}: ${body.albumNames.join(', ')} · account has ${body.assetStatistics.images} photos and ${body.assetStatistics.videos} videos · ${body.people} people`;
-			await invalidateAll();
+			await refreshAll();
 		} catch {
 			connectionState = 'error';
 			connectionError = 'Could not reach Mantel';
@@ -235,7 +235,7 @@
 		allowedAlbums = '';
 		connectionState = 'idle';
 		connectionSummary = null;
-		await invalidateAll();
+		await refreshAll();
 		await refreshCache();
 	}
 
@@ -268,7 +268,7 @@
 				return;
 			}
 			newName = '';
-			await invalidateAll();
+			await refreshAll();
 		} finally {
 			busy = false;
 		}
@@ -277,7 +277,7 @@
 	async function removeDisplay(slug: string, name: string) {
 		if (!confirm(`Delete display “${name}”?`)) return;
 		const res = await fetch(`/api/displays/${slug}`, { method: 'DELETE' });
-		if (res.ok) await invalidateAll();
+		if (res.ok) await refreshAll();
 	}
 </script>
 

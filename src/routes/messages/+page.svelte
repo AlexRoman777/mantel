@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import ControllerHeader from '$lib/components/controller/ControllerHeader.svelte';
+	import ControllerHeader from '#lib/components/controller/ControllerHeader.svelte';
 
 	type Client = {
 		clientId: string; name: string | null; device: string; fingerprint: string; controlAvailable: boolean;

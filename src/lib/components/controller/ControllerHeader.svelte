@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { controllerPublicPort, playerPublicPort } from '$lib/public-ports';
+	import { controllerPublicPort, playerPublicPort } from '#lib/public-ports.js';
 	let {
 		active = 'overview',
 		title,

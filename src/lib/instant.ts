@@ -1,4 +1,4 @@
-import type { FaceInfo, InstantSettings, SlideAsset } from '$lib/types';
+import type { FaceInfo, InstantSettings, SlideAsset } from '#lib/types.js';
 
 /** Dimensions shared by SX-70, 600 and i-Type film, expressed in inches. */
 export const AUTHENTIC_INSTANT = Object.freeze({

@@ -1,8 +1,8 @@
 import { error, json } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { getDisplayCandidates } from '$lib/server/playlist';
-import { getImageCachePlan, prefetchImages } from '$lib/server/image-cache';
-import { getGalleryInsights } from '$lib/server/gallery-insights';
+import { getProfile } from '#lib/server/config.js';
+import { getDisplayCandidates } from '#lib/server/playlist.js';
+import { getImageCachePlan, prefetchImages } from '#lib/server/image-cache.js';
+import { getGalleryInsights } from '#lib/server/gallery-insights.js';
 import type { RequestHandler } from './$types';
 
 async function albumOnlyProfile(slug: string) {

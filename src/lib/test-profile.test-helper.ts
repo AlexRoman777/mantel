@@ -1,4 +1,4 @@
-import type { DisplayProfile } from '$lib/types';
+import type { DisplayProfile } from '#lib/types.js';
 
 const appearance = () => ({ scale: 1, colorMode: 'light' as const, color: '#ffffff' });
 

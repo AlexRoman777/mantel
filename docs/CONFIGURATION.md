@@ -24,6 +24,8 @@ None are required.
 | `DATA_DIR` | Config directory (default `/data` in Docker, `./data` in dev) |
 | `MANTEL_DATA_DIR` | Compose host path for persistent data (default `./mantel-data`) |
 | `TZ` | Timezone, used for memories and screen-off hours |
+| `ORIGIN` | Public address when behind a proxy that does not send `X-Forwarded-Proto`, for example `https://photos.example.com` |
+| `PROTOCOL_HEADER` | Header that carries the original protocol (default `x-forwarded-proto`) |
 | `PLAYLIST_REFRESH_MINUTES` | How often source membership is refreshed from Immich (default `60`) |
 | `IMMICH_UPDATE_POLL_MINUTES` | Shared album-metadata check interval across all players (default `5`, minimum `1`) |
 | `CACHE_CONCURRENCY` | Parallel downloads for a confirmed album cache, clamped 1–8 (default `4`) |

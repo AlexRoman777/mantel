@@ -183,6 +183,11 @@ page does not. It is designed for a network you control.
 Do not port-forward it. Reach it from outside through a VPN or an
 authenticating reverse proxy. See [SECURITY.md](../SECURITY.md).
 
+A proxy that serves Mantel over HTTPS must pass `X-Forwarded-Proto` (most do by
+default), or set `ORIGIN` to the public address, for example
+`ORIGIN=https://photos.example.com`. Otherwise Mantel refuses deletes from the
+controller, because the request looks as if it came from another site.
+
 ## If something does not work
 
 | Symptom | Usually |

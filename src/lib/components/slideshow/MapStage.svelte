@@ -5,15 +5,15 @@
 	// draws crisp views at rest; everything else is DOM with compositor-only
 	// transitions.
 	import { onMount } from 'svelte';
-	import type { FaceInfo, MapSettings, SlideAsset } from '$lib/types';
+	import type { FaceInfo, MapSettings, SlideAsset } from '#lib/types.js';
 	import {
 		decodeDetail, decodeLocalPlaces, decodeWorld, distanceKm, equirectangularProjection, levelForDetail, localPlacesForView, mercatorProjection,
 		scaleForWidth, sentinelPlan, SENTINEL_MAX_LEVEL, SENTINEL_TILE_PX, slerp, stereographicProjection, TEXTURE_MAX_LEVEL, TEXTURE_TILE_PX, tilesFor, worldMercatorCenterLat, worldMercatorScale,
 		type DetailData, type LocalPlace, type PhotoPlace, type RasterWindow, type TileRef, type View, type WorldData
-	} from '$lib/map/geo';
-	import { drawMap, THEMES, type MapTheme, type OsmLayers, type RasterPatch } from '$lib/map/render';
-	import { mapResourcePolicy, subsolarPoint, type MapRenderer, type MapResourcePolicy } from '$lib/map/renderer';
-	import { MapGL } from '$lib/map/map-gl';
+	} from '#lib/map/geo.js';
+	import { drawMap, THEMES, type MapTheme, type OsmLayers, type RasterPatch } from '#lib/map/render.js';
+	import { mapResourcePolicy, subsolarPoint, type MapRenderer, type MapResourcePolicy } from '#lib/map/renderer.js';
+	import { MapGL } from '#lib/map/map-gl.js';
 
 	type LadderLevel = 'street' | 'neighbourhood' | 'place' | 'municipality' | 'region' | 'island' | 'country' | 'continent';
 	interface Trivia {
@@ -1008,7 +1008,7 @@
 	async function createRenderer(): Promise<MapRenderer | null> {
 		if (globe && settings.renderer === 'three') {
 			try {
-				const { MapThree } = await import('$lib/map/map-three');
+				const { MapThree } = await import('#lib/map/map-three.js');
 				return new MapThree(glCanvas);
 			} catch (error) {
 				LOG(`Three.js renderer unavailable, using the shader: ${error instanceof Error ? error.message : String(error)}`);

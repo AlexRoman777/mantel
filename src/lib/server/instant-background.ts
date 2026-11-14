@@ -3,8 +3,8 @@ import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { Readable } from 'node:stream';
 import sharp from 'sharp';
-import { env } from '$env/dynamic/private';
-import type { SlideAsset } from '$lib/types';
+import * as env from '$app/env/private';
+import type { SlideAsset } from '#lib/types.js';
 import { getCachedAssetImage, getImageCachePlan, prefetchImages } from './image-cache';
 
 // Background generation is deliberately bounded so a one-off build cannot

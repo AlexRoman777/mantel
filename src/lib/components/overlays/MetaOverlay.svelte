@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { SlideAsset } from '$lib/types';
+	import type { SlideAsset } from '#lib/types.js';
 
 	let {
 		slide,

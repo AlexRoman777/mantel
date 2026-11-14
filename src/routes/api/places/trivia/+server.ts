@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
-import { getProfile } from '$lib/server/config';
-import { getPlaceTrivia } from '$lib/server/place-trivia';
+import { getProfile } from '#lib/server/config.js';
+import { getPlaceTrivia } from '#lib/server/place-trivia.js';
 import type { RequestHandler } from './$types';
 
 /** Glanceable facts for the map layout's trivia card. */

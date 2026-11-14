@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { ZodError } from 'zod';
-import { clearHomeAssistant, getHomeAssistantStatus, getHomeAssistantWeatherEntities, saveHomeAssistant, testHomeAssistant } from '$lib/server/home-assistant';
+import { clearHomeAssistant, getHomeAssistantStatus, getHomeAssistantWeatherEntities, saveHomeAssistant, testHomeAssistant } from '#lib/server/home-assistant.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async () => {

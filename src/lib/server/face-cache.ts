@@ -1,7 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { env } from '$env/dynamic/private';
-import type { FaceInfo } from '$lib/types';
+import * as env from '$app/env/private';
+import type { FaceInfo } from '#lib/types.js';
 import { getAssetFaces } from './immich';
 
 const inflight = new Map<string, Promise<FaceInfo[]>>();

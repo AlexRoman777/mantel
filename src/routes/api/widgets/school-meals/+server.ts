@@ -1,5 +1,5 @@
 import { error, json } from '@sveltejs/kit';
-import { getSchoolMeals } from '$lib/server/school-meals';
+import { getSchoolMeals } from '#lib/server/school-meals.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ url }) => {

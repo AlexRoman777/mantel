@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { FaceInfo, InstantSettings, SlideAsset, VisualEffect } from '$lib/types';
-	import { formatInstantDate, instantCardAspectRatio, instantImageStyle, instantTurn } from '$lib/instant';
+	import type { FaceInfo, InstantSettings, SlideAsset, VisualEffect } from '#lib/types.js';
+	import { formatInstantDate, instantCardAspectRatio, instantImageStyle, instantTurn } from '#lib/instant.js';
 	import ThumbhashCanvas from './ThumbhashCanvas.svelte';
 
 	let {

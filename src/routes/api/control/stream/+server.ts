@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { registerClient, touchClient, unregisterClient, type Session } from '$lib/server/control';
-import { getConfig, updateConfig } from '$lib/server/config';
+import { registerClient, touchClient, unregisterClient, type Session } from '#lib/server/control.js';
+import { getConfig, updateConfig } from '#lib/server/config.js';
 import type { RequestHandler } from './$types';
 
 /**

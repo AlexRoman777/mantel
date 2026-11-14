@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { getAlbums } from '$lib/server/immich';
+import { getAlbums } from '#lib/server/immich.js';
 import type { RequestHandler } from './$types';
 
 /** Album list for the settings picker (lean shape, thumbnails via the image proxy). */

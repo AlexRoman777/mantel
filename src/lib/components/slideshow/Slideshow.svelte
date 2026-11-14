@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
-	import { isOffHours } from '$lib/off-hours';
-	import { createClientId } from '$lib/client-id';
-	import type { ClientCommand } from '$lib/server/control';
-	import type { DisplayProfile, FaceInfo, MotionStyle, PlaylistResponse, InstantSettings, RemoteShortcutAction, SlideAsset, VisualEffect } from '$lib/types';
-	import Overlays from '$lib/components/overlays/Overlays.svelte';
+	import { isOffHours } from '#lib/off-hours.js';
+	import { createClientId } from '#lib/client-id.js';
+	import type { ClientCommand } from '#lib/server/control.js';
+	import type { DisplayProfile, FaceInfo, MotionStyle, PlaylistResponse, InstantSettings, RemoteShortcutAction, SlideAsset, VisualEffect } from '#lib/types.js';
+	import Overlays from '#lib/components/overlays/Overlays.svelte';
 	import Controls from './Controls.svelte';
 	import Slide from './Slide.svelte';
 	import MapStage from './MapStage.svelte';
-	import type { PhotoPlace } from '$lib/map/geo';
-	import type { MapSettings } from '$lib/types';
+	import type { PhotoPlace } from '#lib/map/geo.js';
+	import type { MapSettings } from '#lib/types.js';
 
 	let { profile }: { profile: DisplayProfile } = $props();
 

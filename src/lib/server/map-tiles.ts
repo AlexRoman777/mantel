@@ -8,8 +8,8 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import { env } from '$env/dynamic/private';
-import { sentinelPlan, SENTINEL_MAX_LEVEL, SENTINEL_TILE_PX, tileDegrees, tilesFor, type TileRef } from '$lib/map/geo';
+import * as env from '$app/env/private';
+import { sentinelPlan, SENTINEL_MAX_LEVEL, SENTINEL_TILE_PX, tileDegrees, tilesFor, type TileRef } from '#lib/map/geo.js';
 
 export const SENTINEL_ATTRIBUTION = 'Sentinel-2 cloudless by EOX IT Services GmbH (contains modified Copernicus Sentinel data)';
 const WMS = 'https://tiles.maps.eox.at/wms';

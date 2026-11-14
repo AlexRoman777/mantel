@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
-import { registerPassiveClient, updateClientState, type ClientDiagnostics, type ClientState } from '$lib/server/control';
-import { getConfig, updateConfig } from '$lib/server/config';
+import { registerPassiveClient, updateClientState, type ClientDiagnostics, type ClientState } from '#lib/server/control.js';
+import { getConfig, updateConfig } from '#lib/server/config.js';
 import type { RequestHandler } from './$types';
 
 /** Displays report their playback state here (paused, current photo). */

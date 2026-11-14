@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TextAppearance } from '$lib/types';
+	import type { TextAppearance } from '#lib/types.js';
 	import Segmented from './Segmented.svelte';
 
 	let { appearance }: { appearance: TextAppearance } = $props();

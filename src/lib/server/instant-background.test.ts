@@ -3,7 +3,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import sharp from 'sharp';
-import type { SlideAsset } from '$lib/types';
+import type { SlideAsset } from '#lib/types.js';
 
 let temporaryDirectory = '';
 
@@ -18,7 +18,9 @@ describe('saved Instant background', () => {
 	it('composes cached thumbnails into one persistent 4K JPEG', async () => {
 		temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'mantel-instant-'));
 		vi.stubEnv('DATA_DIR', temporaryDirectory);
-		vi.doMock('$env/dynamic/private', () => ({ env: { DATA_DIR: temporaryDirectory, CACHE_CONCURRENCY: '2' } }));
+		vi.doMock('$app/env/private', async () =>
+			(await import('#lib/server/env.test-helper.js')).privateEnv({ DATA_DIR: temporaryDirectory, CACHE_CONCURRENCY: '2' })
+		);
 		const cache = path.join(temporaryDirectory, 'image-cache');
 		await fs.mkdir(cache, { recursive: true });
 		const fixture = await sharp({ create: { width: 320, height: 240, channels: 3, background: '#b5674d' } }).jpeg().toBuffer();

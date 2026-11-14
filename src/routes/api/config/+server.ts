@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { ZodError } from 'zod';
-import { getConfig, saveConfig } from '$lib/server/config';
+import { getConfig, saveConfig } from '#lib/server/config.js';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async () => json(await getConfig());

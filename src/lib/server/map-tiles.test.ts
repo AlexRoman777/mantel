@@ -5,7 +5,9 @@ import { afterAll, describe, expect, it, vi } from 'vitest';
 
 // The module reads its data directory through $env, so it is fixed before import.
 process.env.MANTEL_TEST_DATA_DIR = await fs.mkdtemp(path.join(os.tmpdir(), 'mantel-map-tiles-'));
-vi.mock('$env/dynamic/private', () => ({ env: { DATA_DIR: process.env.MANTEL_TEST_DATA_DIR } }));
+vi.mock('$app/env/private', async () =>
+	(await import('#lib/server/env.test-helper.js')).privateEnv({ DATA_DIR: process.env.MANTEL_TEST_DATA_DIR })
+);
 
 const { bundledBlock, mapLibraryStats } = await import('./map-tiles');
 

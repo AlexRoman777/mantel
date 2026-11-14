@@ -3,7 +3,7 @@
 <!-- The server redirects this route to /display/default. This is only a
      no-script/error fallback and must never become a presentation launcher. -->
 <script lang="ts">
-	import { playerPublicPort } from '$lib/public-ports';
+	import { playerPublicPort } from '#lib/public-ports.js';
 </script>
 
 <main>

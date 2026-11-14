@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { Corner, DisplayProfile, FaceInfo, SlideAsset } from '$lib/types';
+	import type { Corner, DisplayProfile, FaceInfo, SlideAsset } from '#lib/types.js';
 	import DashboardWidget from './DashboardWidget.svelte';
 	import PeopleOverlay from './PeopleOverlay.svelte';
 	import ClockOverlay from './ClockOverlay.svelte';
