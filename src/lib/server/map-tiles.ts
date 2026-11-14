@@ -30,7 +30,7 @@ export type BlockKind = (typeof BLOCK_KINDS)[number];
 
 /**
  * Where a pyramid lives: the directory in the data volume (several GB, built by
- * scripts/build-map-*.mjs and copied to the NAS by hand), then the build output,
+ * scripts/build-map-*.mjs and copied into the data directory by hand), then the build output,
  * then the source tree for development.
  *
  * The imagery is moved around by hand, so the layouts a human actually produces
@@ -39,7 +39,7 @@ export type BlockKind = (typeof BLOCK_KINDS)[number];
  * its `textures` parent.
  */
 function bundledDirs(kind: BlockKind): string[] {
-	// Lives in the persistent data volume by default: /volume1/docker/mantel-data/map.
+	// Lives in the persistent data volume by default: <data directory>/map.
 	const root = env.MAP_DIR || path.join(env.DATA_DIR || './data', 'map');
 	const relative = kind === 'sentinel' ? ['sentinel'] : ['textures', kind];
 	const candidates = [

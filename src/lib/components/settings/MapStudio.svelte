@@ -98,7 +98,7 @@
 					{ value: 'blue-marble', label: 'Blue Marble only' }
 				]}
 			/>
-			<p class="field-hint">Sentinel-2 cloudless tiles (Copernicus data via EOX, free for personal use) are fetched once only for places this presentation can visit and then kept on the NAS. Prebuilding a region is optional and must be started explicitly. Blue Marble alone is 1.8 km per pixel and looks blocky when zoomed in.</p>
+			<p class="field-hint">Sentinel-2 cloudless tiles (Copernicus data via EOX, free for personal use) are fetched once only for places this presentation can visit and then kept on this server. Prebuilding a region is optional and must be started explicitly. Blue Marble alone is 1.8 km per pixel and looks blocky when zoomed in.</p>
 		{/if}
 		<Toggle label="OpenStreetMap detail around each place: roads, rail, rivers, lakes, forests, every town and village" bind:checked={settings.osmDetail} />
 		<p class="field-hint">Fetched once per place from OpenStreetMap (© OpenStreetMap contributors) and stored locally. The first pass runs in the background; until a place is ready the bundled Natural Earth detail is drawn.</p>

@@ -8,7 +8,7 @@ RUN npm run build && npm prune --omit=dev
 
 # ---- runtime ----
 # checkov:skip=CKV_DOCKER_3:The image intentionally has no USER instruction.
-# It starts as root only to chown the /data mount point, which a NAS host may
+# It starts as root only to chown the /data mount point, which a Docker host may
 # have created as root, then drops to MANTEL_PUID:MANTEL_PGID (default
 # 10001:10001) with su-exec. A UID of 0 is rejected outright. See
 # scripts/docker-entrypoint.sh.

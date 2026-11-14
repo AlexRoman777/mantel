@@ -20,7 +20,7 @@ done
 # root has no DAC_OVERRIDE and cannot write into a volume owned by that user.
 
 if [ "$(id -u)" = "0" ]; then
-	# NAS Docker hosts can create a missing bind-mount directory as root. Change only the
+	# Some Docker hosts create a missing bind-mount directory as root. Change only the
 	# mount point itself so startup time never grows with the image cache, and never fail
 	# on a volume shared with other applications.
 	chown "$run_uid:$run_gid" "$data_dir" || echo "mantel: could not take ownership of $data_dir; continuing" >&2

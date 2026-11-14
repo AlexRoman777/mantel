@@ -150,30 +150,25 @@ at startup, so a redeploy cannot stall while walking thousands of cached images.
 A fresh data directory just works. If you **copy an older one in by hand**, make
 sure the files are owned by or writable for those IDs first.
 
-## Installing without a registry
+## Installing without internet access
 
-If the machine cannot pull images, the lowercase [`mantel/`](../mantel)
-directory holds a single-container handoff: `compose.yaml` and `VERSION`.
-
-Build the archive yourself — it is a build artifact, deliberately not committed:
+If the machine cannot pull images, save the image on a machine that can and copy
+the file across:
 
 ```sh
-./scripts/export-nas-image.sh
+docker pull ghcr.io/alexroman777/mantel:1.0.0
+docker save ghcr.io/alexroman777/mantel:1.0.0 | gzip > mantel.tar.gz
 ```
 
-Then, on the target machine:
+Then, on the target machine, next to your `docker-compose.yml`:
 
 ```sh
 docker load --input mantel.tar.gz
-docker compose -f compose.yaml config --quiet
-docker compose -f compose.yaml up -d --wait --wait-timeout 90
+docker compose up -d --wait --wait-timeout 90
 ```
 
-That last command exits successfully only once Mantel passes its health check,
-or fails after 90 seconds rather than hanging.
-
-See [SELF_HOSTED_REGISTRY.md](SELF_HOSTED_REGISTRY.md) if you would rather run
-your own registry.
+The last command exits once Mantel passes its health check, or fails after 90
+seconds rather than hanging.
 
 ## Before you expose it
 

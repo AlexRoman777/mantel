@@ -8,7 +8,7 @@ import type { SlideAsset } from '#lib/types.js';
 import { getCachedAssetImage, getImageCachePlan, prefetchImages } from './image-cache';
 
 // Background generation is deliberately bounded so a one-off build cannot
-// monopolize the NAS while Mantel and Immich are serving normal requests.
+// monopolize the host while Mantel and Immich are serving normal requests.
 sharp.concurrency(2);
 sharp.cache({ memory: 64, files: 20, items: 100 });
 

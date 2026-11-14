@@ -1,6 +1,6 @@
 # Mantel architecture
 
-Mantel is a private, LAN-only Immich presentation system. One NAS container owns
+Mantel is a private, LAN-only Immich presentation system. One container owns
 the photo-library integration and any sensitive state; browsers are disposable
 players that receive only presentation data and cached media URLs.
 
@@ -10,9 +10,9 @@ players that receive only presentation data and cached media URLs.
 Immich
   ^ read-only API key, server-side only
   |
-Mantel container on NAS
-  |- player HTTP :8780 -> NAS :3830
-  |- controller HTTP :8781 -> NAS :3831
+Mantel container
+  |- player HTTP :8780 -> host :3830
+  |- controller HTTP :8781 -> host :3831
   |- /data/config.json
   |- /data/immich-connection.json (0600)
   |- /data/home-assistant.json (0600)
@@ -87,7 +87,7 @@ the frozen remainder.
 ## Caching and Immich load
 
 Browsers request `/api/image/{assetId}` from Mantel. Mantel fetches the selected
-Immich derivative once, stores it on the NAS NVMe cache, and serves all clients
+Immich derivative once, stores it in its local cache, and serves all clients
 from that shared copy. Responses use immutable cache headers because an asset ID
 and size identify stable content.
 
@@ -117,10 +117,6 @@ assets or owner-specific recognition is required.
 - The ordinary Immich key is strictly read-only and documented in
   `docs/IMMICH_API_KEY.md`.
 - Player URLs contain presentation slugs, never secrets.
-- Remote project implementations and artwork are ideas-only; Mantel code and
-  assets remain independently created.
-- Cache deletion, presentation deletion, NAS deployment, Pi mutation, and
-  Immich changes require explicit scope and target checks.
 
 ## Known limits
 

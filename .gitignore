@@ -51,10 +51,6 @@ vite.config.ts.timestamp-*
 static/map/textures/
 static/map/sentinel/
 mantel-data/
-# The NAS handoff directory is generated, except its Compose file.
-mantel/*
-!mantel/compose.yaml
-
 # Release artifacts (never commit: these made the old history 2 GB)
 mantel/*.tar.gz
 *.tar.gz

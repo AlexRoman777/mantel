@@ -38,7 +38,7 @@ Mantel tests every required read operation against the allowed album before
 saving it. The key is stored server-side in
 `/data/immich-connection.json` with owner-only permissions and is never returned
 to browsers. It is not meaningfully encryptable without a second external
-secret, so protect the NAS volume and keep the controller on the trusted LAN.
+secret, so protect the data directory and keep the controller on the trusted LAN.
 Never put it in a player URL, browser storage, screenshots, or Git.
 
 Immich permissions are capability-based and cannot scope an API key to one
