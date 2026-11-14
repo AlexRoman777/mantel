@@ -34,7 +34,7 @@ body:
     attributes:
       label: Mantel version
       description: The version in package.json, or the image tag you run.
-      placeholder: "1.0.0"
+      placeholder: "1.0.1"
     validations:
       required: true
 

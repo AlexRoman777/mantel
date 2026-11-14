@@ -3,11 +3,17 @@
 Mantel follows [semantic versioning](https://semver.org). A change that breaks an existing
 installation or its saved configuration raises the first number.
 
-## Unreleased
+## 1.0.1 (14 November 2026)
 
 - Built on SvelteKit 3, which fixes the remaining framework security advisories.
-- Deletes from another site are now refused. Behind an HTTPS proxy, the proxy must send
-  `X-Forwarded-Proto` or `ORIGIN` must be set; see the installation guide.
+- Deletes sent from another site are now refused.
+- The documentation and the controller no longer assume a NAS: the NAS handoff bundle is
+  replaced by a plain `docker save` / `docker load` guide for machines without internet access.
+
+**Upgrade note.** If Mantel sits behind a reverse proxy that serves it over HTTPS, the proxy must
+send `X-Forwarded-Proto` (most do by default), or set `ORIGIN` to the public address, for
+example `ORIGIN=https://photos.example.com`. Otherwise deletes from the controller are refused.
+Direct connections on your network need no change.
 
 ## 1.0.0 (14 November 2026)
 
