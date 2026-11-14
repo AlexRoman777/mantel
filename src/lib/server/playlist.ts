@@ -282,7 +282,7 @@ export async function getPlaylistPage(
 		count
 	);
 	// Warm only the immediately requested page. Bulk album caching is an explicit,
-	// confirmed controller action so a broad account can never fill the NAS by surprise.
+	// confirmed controller action so a broad account can never fill the disk by surprise.
 	void prefetchImages(page.slides, profile.slideshow.imageSize);
 	return page;
 }

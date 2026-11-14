@@ -9,7 +9,7 @@ export const GET: RequestHandler = async () =>
 		...(await getImageCacheStats()),
 		map: {
 			// Which imagery the server found on disk, and where: the one question
-			// worth answering when the map looks bare after copying files onto a NAS.
+			// worth answering when the map looks bare after copying files into the data directory.
 			library: await mapLibraryStats(),
 			sentinel: await sentinelCacheStats(),
 			osm: await osmCacheStats(),

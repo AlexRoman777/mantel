@@ -34,7 +34,7 @@
 				return;
 			}
 		} catch {
-			// A kiosk may start before the NAS. Stay black and reconnect quietly.
+			// A kiosk may start before the server. Stay black and reconnect quietly.
 		}
 		if (!stopped) setTimeout(() => void loadProfile(clientId), 5000);
 	}

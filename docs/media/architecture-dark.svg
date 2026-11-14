@@ -39,7 +39,7 @@
   <!-- Mantel host -->
   <rect class="host" x="300" y="54" width="360" height="362" rx="14"/>
   <text class="big" x="480" y="88" text-anchor="middle">Mantel</text>
-  <text class="sub" x="480" y="108" text-anchor="middle">one container, on a NAS, a Pi or any Linux box</text>
+  <text class="sub" x="480" y="108" text-anchor="middle">one container, on any Docker host</text>
 
   <rect class="inner" x="324" y="128" width="312" height="46" rx="8"/>
   <text class="lbl" x="480" y="150" text-anchor="middle">Immich reader</text>

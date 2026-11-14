@@ -16,7 +16,7 @@ export interface CachedImage {
 }
 
 const inflight = new Map<string, Promise<CachedImage>>();
-// Four parallel preview downloads fills a local NAS cache materially faster
+// Four parallel preview downloads fills the local cache materially faster
 // without turning a confirmed album cache into an unbounded Immich stampede.
 const PREFETCH_CONCURRENCY = Math.min(8, Math.max(1, Number(env.CACHE_CONCURRENCY) || 4));
 const prefetchQueue: Array<{
@@ -59,7 +59,7 @@ async function cacheHit(assetId: string, size: ImageSize, connectionId?: string)
 			.readFile(target.metadata, 'utf8')
 			.then((raw) => JSON.parse(raw) as { contentType?: string })
 			.catch(() => ({} as { contentType?: string }));
-		// Recency lives in mtime (atime is unreliable on NAS mounts). Cheap, fire-and-forget.
+		// Recency lives in mtime (atime is unreliable on many mounts). Cheap, fire-and-forget.
 		const now = new Date();
 		void fs.utimes(target.image, now, now).catch(() => {});
 		return { path: target.image, contentType: metadata.contentType ?? 'image/jpeg' };

@@ -465,7 +465,7 @@
 
 	<section class="cache-card">
 		<div>
-			<span class="section-label">Persistent NAS storage · mantel-data</span>
+			<span class="section-label">Persistent storage · mantel-data</span>
 			<h2>Local photo storage</h2>
 			<p>
 				{cacheSize} · {cache?.files ?? 0} files · {cacheCeiling}

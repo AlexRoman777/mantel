@@ -110,7 +110,7 @@ can show the person's age when each photo was taken.
 
 This live mode does not run eye-alignment, pose, blink or blur ML filters, and
 does not compile an MP4. Those remain an optional offline production pipeline
-rather than work suitable for every NAS slide.
+rather than work suitable for every slide.
 
 ## Multiple Immich accounts
 

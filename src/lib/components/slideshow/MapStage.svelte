@@ -308,7 +308,7 @@
 	function measure(): void {
 		viewport = { width: innerWidth, height: innerHeight };
 		const dpr = Math.min(devicePixelRatio || 1, 2);
-		// The animated raster never needs 4K: cap it so a Raspberry Pi keeps 60 fps.
+		// The animated raster never needs 4K: cap it so low-powered players keep 60 fps.
 		resourcePolicy = mapResourcePolicy(deviceCores(), deviceMemoryGb(), renderer?.maxTextureSize);
 		const glCap = resourcePolicy.animationWidthPx;
 		const glRatio = Math.min(dpr, glCap / viewport.width);
